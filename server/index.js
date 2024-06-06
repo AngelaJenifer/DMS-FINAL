@@ -9,13 +9,17 @@ const DockModel = require('./models/DockModel');
 const CommodityModel = require('./models/CommodityModel');
 const LocationModel = require('./models/LocationModel');
 const TenantModel = require('./models/TenantModel');
+const TransporterModel = require('./models/TransporterModel');
+const dotenv = require('dotenv')
+
+dotenv.config()
 
 const app = express();
 
 app.use(express.json());
 app.use(cors());
 
-mongoose.connect("mongodb://127.0.0.1:27017/Dock");
+mongoose.connect(process.env.MONGO_URL);
 
 
 
@@ -405,7 +409,57 @@ app.delete('/deletetenant/:id', async (req, res) => {
 
 // tenant list crud ending
 
+//transporter crud starting
+// Fetch location
+app.get('/transporter', async (req, res) => {
+    try {
+        const companies = await TransporterModel.find();
+        res.json({ success: true, data: companies });
+    } catch (err) {
+        res.json({ success: false, message: err.message });
+    }
+});
 
-app.listen(5000, () => {
+//create data // save data in mongo //install rapid api in extension
+//"http://localhost:8080/create" {name,emai,mobile}
+app.post('/createtransporter', async (req, res) => {
+    try {
+        const company = new TransporterModel(req.body);
+        await company.save();
+        res.json({ success: true, message: 'transporter created successfully' });
+    } catch (err) {
+        res.json({ success: false, message: err.message });
+    }
+});
+
+//update
+//"http://localhost:8080/update" {id,name,emai,mobile}
+
+app.put('/updatetransporter', async (req, res) => {
+    try {
+        const company = await TransporterModel.findByIdAndUpdate(req.body._id, req.body, { new: true });
+        res.json({ success: true, message: 'transporter updated successfully', data: company });
+    } catch (err) {
+        res.json({ success: false, message: err.message });
+    }
+});
+
+//delete
+//"http://localhost:8080/delete/id" 
+
+app.delete('/deletetransporter/:id', async (req, res) => {
+    try {
+        await TransporterModel.findByIdAndDelete(req.params.id);
+        res.json({ success: true, message: 'transporter deleted successfully' });
+    } catch (err) {
+        console.error("Error deleting Tenant:", err.message);
+        res.json({ success: false, message: err.message });
+    }
+});
+
+// transporter list crud ending
+
+
+app.listen(process.env.PORT, () => {
     console.log('Server is running')
 })

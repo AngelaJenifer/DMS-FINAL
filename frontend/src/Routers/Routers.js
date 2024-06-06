@@ -14,6 +14,7 @@ import Dock from '../Pages/Dock';
 import Commodity from '../Pages/Commodity';
 import Location from '../Pages/Location';
 import Tenant from '../Pages/Tenant';
+import Transporter from '../Pages/Transporter';
 const Routers = () => {
   return (
     <Routes>
@@ -32,6 +33,7 @@ const Routers = () => {
     <Route path='/settings/commodity' element={<Commodity />} />
     <Route path='/settings/location' element={<Location />} />
     <Route path='/settings/tenant' element={<Tenant />} />
+    <Route path='/settings/transporter' element={<Transporter />} />
 
     
     
