@@ -1,0 +1,34 @@
+{
+    "locations": [
+      { "id": 1, "name": "Setia City Mall 2" },
+      { "id": 2, "name": "SLB ETHANOL Warehouse" },
+      { "id": 3, "name": "Flipkartchn" },
+      { "id": 4, "name": "Locationd" },
+      { "id": 5, "name": "SETIA CITY MALL Test Location on Dock Booking" },
+      { "id": 6, "name": "Chennai" },
+      { "id": 7, "name": "Salem" }
+    ],
+    "customers": [
+      { "id": 1, "name": "KFC" },
+      { "id": 2, "name": "Arrow" },
+      { "id": 3, "name": "MAC-KD" },
+      { "id": 4, "name": "DSAT" },
+      { "id": 5, "name": "Lulu Supermarket" },
+      { "id": 6, "name": "Guardian" },
+      { "id": 7, "name": "Dzi kingdom" },
+      { "id": 8, "name": "D'Nature" },
+      { "id": 9, "name": "NOG Eyewear" },
+      { "id": 10, "name": "LA Watch" },
+      { "id": 11, "name": "Ahh-yum by Kampung kravers" },
+      { "id": 12, "name": "Union Cafe" },
+      { "id": 13, "name": "CDMC" },
+      { "id": 14, "name": "Dunkin Cafe" },
+      { "id": 15, "name": "The Whale Tea" },
+      { "id": 16, "name": "MyLaksa" },
+      { "id": 17, "name": "Sup Haji Abu" },
+      { "id": 18, "name": "Stuff'd" },
+      { "id": 19, "name": "Chun Yang" }
+      
+      
+    ]
+  }

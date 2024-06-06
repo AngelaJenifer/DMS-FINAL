@@ -1,0 +1,102 @@
+.slider_item {
+  max-width: 100%;
+  height: 650px;
+}
+
+.slider_item-01 {
+  background: linear-gradient(rgba(77, 124, 138, 0.5), rgba(30, 78, 90, 0.5)),
+  url("../Assets/all-images/slider-img/global.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.slider_item-02 {
+  background: linear-gradient(rgba(77, 124, 138, 0.5), rgba(30, 78, 90, 0.5)),
+  url("../Assets/all-images/slider-img/slider9.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.slider_item-03 {
+  background: linear-gradient(rgba(77, 124, 138, 0.5), rgba(30, 78, 90, 0.5)),
+  url("../Assets/all-images/slider-img/lorry.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero__slider {
+  overflow: hidden;
+}
+
+.slider__content {
+  padding-top: 150px;
+
+}
+
+.slider__content h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: black;
+}
+
+.btn.reserve__btn {
+  background: #4d7c8a !important;
+  color: white !important;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.booknow {
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+
+.booknow:hover {
+  color: white;
+  background-color: rgb(172, 205, 235);
+}
+
+.btn.reserve__btn a {
+  text-decoration: none;
+  font-weight: 600;
+  color: white;
+  font-size: 1.7rem;
+}
+
+.btn.reserve__btn a:hover {
+  color: white;
+}
+
+.btn.reserve__btn:hover {
+  background-color: darkred;
+  color: orange;
+}
+
+@media only screen and (max-width: 992px) {
+  .slider__item {
+      height: 530px;
+      max-width: 100vw;
+  }
+
+  .slider__content {
+      margin-top: -50px;
+  }
+
+  .slider__content h1 {
+      font-size: 2rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .slider__item {
+      height: 450px;
+  }
+
+  .slider__content h1 {
+      font-size: 1.5rem;
+  }
+}
