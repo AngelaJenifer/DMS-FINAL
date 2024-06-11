@@ -10,7 +10,6 @@ import axios from 'axios';
 import TruckCanvas from './canvas/TruckCanvas';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import ClearIcon from '@mui/icons-material/Clear';
-import Button from 'react-bootstrap/esm/Button';
 import { exportToExcel } from './utils/excelUtils'
 
 const TruckType = () => {

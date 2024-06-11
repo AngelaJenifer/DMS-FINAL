@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import 'dhtmlx-scheduler';
 import 'dhtmlx-scheduler/codebase/dhtmlxscheduler.css';
-import '../../Styles/Scheduler.css'
+import '../../Styles/Scheduler.css';
 
 const Scheduler = ({ events, onDataUpdated, timeFormatState }) => {
     const schedulerContainerRef = useRef(null);
@@ -19,11 +19,15 @@ const Scheduler = ({ events, onDataUpdated, timeFormatState }) => {
             'today',
             'next'
         ];
-        schedulerInstance.config.hour_date = '%g:%i %A'; // %A displays AM/PM
+        schedulerInstance.config.hour_date = timeFormatState ? '%H:%i' : '%g:%i %A'; // Use 24-hour or 12-hour format
         schedulerInstance.xy.scale_width = 70;
 
-       
+        // Set time range from 9:00 AM to 6:00 PM
+        schedulerInstance.config.first_hour = 9;
+        schedulerInstance.config.last_hour = 18;
 
+        // Configure the time step to 30 minutes
+        schedulerInstance.config.time_step = 30;
 
         const initSchedulerEvents = () => {
             if (!schedulerInstance._$initialized) {
@@ -34,7 +38,7 @@ const Scheduler = ({ events, onDataUpdated, timeFormatState }) => {
                         saveEventsToStorage(allEvents); // Save events to localStorage
                     }
                 });
-                
+
                 schedulerInstance.attachEvent('onEventChanged', (id, ev) => {
                     if (onDataUpdated) {
                         onDataUpdated('update', ev, id);
@@ -42,7 +46,7 @@ const Scheduler = ({ events, onDataUpdated, timeFormatState }) => {
                         saveEventsToStorage(allEvents); // Save events to localStorage
                     }
                 });
-                
+
                 schedulerInstance.attachEvent('onEventDeleted', (id, ev) => {
                     if (onDataUpdated) {
                         onDataUpdated('delete', ev, id);
@@ -50,7 +54,6 @@ const Scheduler = ({ events, onDataUpdated, timeFormatState }) => {
                         saveEventsToStorage(allEvents); // Save events to localStorage
                     }
                 });
-                
 
                 schedulerInstance._$initialized = true;
             }
@@ -78,6 +81,20 @@ const Scheduler = ({ events, onDataUpdated, timeFormatState }) => {
 
         schedulerInstance.init(schedulerContainerRef.current, new Date(), 'day'); // Set the default view to day
 
+        // Set lightbox time range
+        schedulerInstance.config.lightbox.sections = [
+            { name: "description", height: 50, map_to: "text", type: "textarea", focus: true },
+            { name: "time", height: 72, type: "time", map_to: "auto" }
+        ];
+
+        // Customize the time select options
+        schedulerInstance.attachEvent("onLightbox", function(id) {
+            const ev = schedulerInstance.getEvent(id);
+            ev.start_date.setHours(Math.max(9, Math.min(18, ev.start_date.getHours())));
+            ev.end_date.setHours(Math.max(9, Math.min(18, ev.end_date.getHours())));
+            schedulerInstance.updateEvent(id);
+        });
+
         // Clean up
         return () => {
             schedulerInstance.clearAll();
@@ -86,23 +103,14 @@ const Scheduler = ({ events, onDataUpdated, timeFormatState }) => {
 
     useEffect(() => {
         const schedulerInstance = window.scheduler;
+        schedulerInstance.config.hour_date = timeFormatState ? '%H:%i' : '%g:%i %A';
+        schedulerInstance.templates.hour_scale = schedulerInstance.date.date_to_str(schedulerInstance.config.hour_date);
         schedulerInstance.render();
     }, [timeFormatState]);
-
-    const setTimeFormat = (state) => {
-        const schedulerInstance = window.scheduler;
-        schedulerInstance.config.hour_date = state ? '%H:%i' : '%g:%i %A';
-        schedulerInstance.templates.hour_scale = schedulerInstance.date.date_to_str(
-            schedulerInstance.config.hour_date
-        );
-    };
-
-    setTimeFormat(timeFormatState);
 
     const saveEventsToStorage = (events) => {
         localStorage.setItem('events', JSON.stringify(events));
     };
-    
 
     return (
         <div

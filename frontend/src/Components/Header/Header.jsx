@@ -60,7 +60,7 @@ const Header = () => {
             <Col lg="6" md="6" sm="6">
               <div className="header_top_left">
               
-                <span className="header_top_help">Need help?
+                <span className="needhelp header_top_help">Need help?
                 <a href='tel:+123456789'>
                 <button className="header__btn ">
                   <FaPhone className='call-icon'/>
@@ -74,13 +74,13 @@ const Header = () => {
             <Col lg="6" md="6" sm="6">
               <div className="header_top_right d-flex align-items-center justify-content-end gap-3">
                 
-                <Link to="/login" className=" d-flex align-items-center gap-1">
+                <Link to="/login" className="loginbutton d-flex align-items-center gap-1">
                   <i class="ri-login-circle-line"></i>Login
                 </Link>
 
                 
 
-                <Link to="/register" className=" d-flex align-items-center gap-1">
+                <Link to="/register" className="registerbutton d-flex align-items-center gap-1">
                   <i class="ri-user-line"></i> Register
                 </Link>
               </div>

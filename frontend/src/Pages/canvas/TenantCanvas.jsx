@@ -96,14 +96,14 @@ const TenantCanvas = ({
                     <Button
                         variant="primary"
                         onClick={toggleShow}
-                        style={{ backgroundColor: '#7c5f87', marginLeft:'950px' }} // Added margin to the right
+                        style={{ backgroundColor: '#4d7c8a', marginLeft:'750px' }} 
                     >
                         Add Cust/Tenant/Cons
                     </Button>
                     <Button
                         variant="secondary"
                         onClick={exportToExcel}
-                        style={{ backgroundColor: '#7c5f87', marginRight:'20px' }}
+                        style={{ backgroundColor: '#4d7c8a', marginRight:'20px' }}
                     >
                         Export to Excel
                     </Button>
@@ -112,7 +112,7 @@ const TenantCanvas = ({
             <Offcanvas show={visible} onHide={toggleShow} style={{ width: "80%" }}>
                 <Offcanvas.Header closeButton>
                     <Offcanvas.Title>
-                        {editSection ? "Edit Company" : "Add Company"}
+                        {editSection ? "Edit Cust/Tenant/Cons" : "Add Cust/Tenant/Cons"}
                     </Offcanvas.Title>
                 </Offcanvas.Header>
                 <hr />
@@ -283,8 +283,8 @@ const TenantCanvas = ({
                             </Col>
                         </Row>
                         <div style={{marginLeft: "500px"}} >
-                        <Button type="submit" style={{ marginTop: '15px', backgroundColor: '#7c5f87'}}>
-                                    {editSection ? "Update Company" : "Add Company"}
+                        <Button type="submit" style={{ marginTop: '15px', backgroundColor: '#4d7c8a'}}>
+                                    {editSection ? "Update Cust/Tenant/Cons" : "Add Cust/Tenant/Cons"}
                                 </Button>
                                 <Button type="button" 
                                 onClick={toggleShow}

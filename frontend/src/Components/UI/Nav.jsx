@@ -102,7 +102,7 @@ const Nav = () => {
           </div>
 
           <div className="nav__right">
-            <MDBBtn className="mb-4 px-5" style={{ background: '#7c5f87', border:"white" }} size='lg' onClick={handleLogout}>Logout</MDBBtn>
+            <MDBBtn className="mb-4 px-5" style={{ background: '#4d7c8a', border:"white" }} size='lg' onClick={handleLogout}>Logout</MDBBtn>
           </div>
         </div>
       </Container>

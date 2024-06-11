@@ -39,7 +39,7 @@ const HeroSlider = () => {
             <button className="btn reserve__btn mt-4"
             onClick={handleBooknow}
             disabled={isLoading} >
-              {isLoading ? <ClipLoader size={20} color={"red"} /> : <span className="booknow" >Book Now</span> }
+              {isLoading ? <ClipLoader size={20} color={"white"} /> : <span className="booknow" >Book Now</span> }
             </button>
             
           </div>

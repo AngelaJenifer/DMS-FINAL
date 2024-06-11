@@ -1,3 +1,49 @@
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.btn-success{
+  background: linear-gradient(270deg, #4d7c8a, #3d8ea7, #4d7c8a);
+  border: none;
+  color: #ffffff;
+  transition: background 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  animation: gradientShift 3s ease infinite !important;
+  border-radius: 5px !important;
+
+}
+
+.btn-default {
+  background: linear-gradient(270deg, #4d7c8a, #3d8ea7, #4d7c8a);
+  background-size: 600% 600%;
+  border: none;
+  color: #ffffff !important;
+  transition: background 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px !important;
+}
+
+.btn-success:hover, .btn-default:hover {
+  animation: gradientShift 3s ease infinite;
+  color: black !important;
+  background: linear-gradient(to right, #74ebd5 0%, #9face6 100%);
+  border:2px solid #9aa5df !important;
+  
+}
+
+
+
+
 .cascading-right {
     margin-right: -50px;
   }
@@ -7,3 +53,5 @@
       margin-right: 0;
     }
   }
+
+  

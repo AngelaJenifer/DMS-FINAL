@@ -62,6 +62,10 @@ class Calendar extends Component {
 
     render() {
         const { currentTimeFormatState, events } = this.state;
+
+        const timeRangeStart = '09:00';
+        const timeRangeEnd = '18:00';
+        const timeFormat = 'hh:mm A';
         
         return (
             <>
@@ -72,6 +76,9 @@ class Calendar extends Component {
                         events={events}
                         timeFormatState={currentTimeFormatState}
                         onDataUpdated={this.logDataUpdate}
+                        timeRangeStart={timeRangeStart}
+                        timeRangeEnd={timeRangeEnd}
+                        timeFormat={timeFormat}
                     />
                 </div>
             </div>

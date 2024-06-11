@@ -50,7 +50,7 @@ function Login() {
         <MDBCard className="card-custom">
           <MDBRow className='g-0'>
             <MDBCol md='6'>
-              <MDBCardImage src={video1} alt="login form" className='rounded-start w-100 transparent-image' />
+              <MDBCardImage src={video1} alt="login form" className='rounded w-100  transparent-image' />
             </MDBCol>
             <MDBCol md='6'>
               <MDBCardBody className='d-flex flex-column justify-content-center'>
@@ -58,8 +58,10 @@ function Login() {
                   <h2 className='login-title'>Login</h2>
                   <form onSubmit={handleLogin}>
                     <div className='mb-4'>
-                      <MDBInput 
-                        label="User ID" 
+                    <label>User ID</label>
+                    
+                      <input 
+                      label="User ID" 
                         type="text" 
                         className='form-control form-control-custom' 
                         value={userid} 
@@ -67,8 +69,9 @@ function Login() {
                       />
                     </div>
                     <div className='mb-4'>
-                      <MDBInput 
-                        label="Password" 
+                      <label>Password</label>
+                      <input 
+                         
                         type="password" 
                         className='form-control form-control-custom' 
                         value={password} 

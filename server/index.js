@@ -10,7 +10,8 @@ const CommodityModel = require('./models/CommodityModel');
 const LocationModel = require('./models/LocationModel');
 const TenantModel = require('./models/TenantModel');
 const TransporterModel = require('./models/TransporterModel');
-const dotenv = require('dotenv')
+const dotenv = require('dotenv');
+const DockBookingModel = require('./models/DockBookingModel');
 
 dotenv.config()
 
@@ -458,6 +459,57 @@ app.delete('/deletetransporter/:id', async (req, res) => {
 });
 
 // transporter list crud ending
+
+
+//dockbooking crud starting
+// Fetch dockbooking
+app.get('/dockbooking', async (req, res) => {
+    try {
+        const companies = await DockBookingModel.find();
+        res.json({ success: true, data: companies });
+    } catch (err) {
+        res.json({ success: false, message: err.message });
+    }
+});
+
+//create data // save data in mongo //install rapid api in extension
+//"http://localhost:8080/create" {name,emai,mobile}
+app.post('/createdockbooking', async (req, res) => {
+    try {
+        const company = new DockBookingModel(req.body);
+        await company.save();
+        res.json({ success: true, message: 'Dock booked successfully' });
+    } catch (err) {
+        res.json({ success: false, message: err.message });
+    }
+});
+
+//update
+//"http://localhost:8080/update" {id,name,emai,mobile}
+
+app.put('/updatedockbooking', async (req, res) => {
+    try {
+        const company = await DockBookingModel.findByIdAndUpdate(req.body._id, req.body, { new: true });
+        res.json({ success: true, message: 'Dock updated successfully', data: company });
+    } catch (err) {
+        res.json({ success: false, message: err.message });
+    }
+});
+
+//delete
+//"http://localhost:8080/delete/id" 
+
+app.delete('/deletedockbooking/:id', async (req, res) => {
+    try {
+        await DockBookingModel.findByIdAndDelete(req.params.id);
+        res.json({ success: true, message: 'Dock booking deleted successfully' });
+    } catch (err) {
+        console.error("Error deleting Tenant:", err.message);
+        res.json({ success: false, message: err.message });
+    }
+});
+
+// dockbooking list crud ending
 
 
 app.listen(process.env.PORT, () => {

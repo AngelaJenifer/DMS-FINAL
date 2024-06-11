@@ -33,7 +33,7 @@ const TruckCanvas = ({
                 <Button
                     variant="primary"
                     onClick={toggleShow}
-                    style={{ backgroundColor: '#7c5f87', marginLeft:'950px' }} // Added margin to the right
+                    style={{ backgroundColor: '#4d7c8a', marginLeft:'950px' }} // Added margin to the right
                 >
                     Add TruckType
                 </Button>
@@ -41,7 +41,7 @@ const TruckCanvas = ({
                 <Button
                         variant="secondary"
                         onClick={exportToExcel}
-                        style={{ backgroundColor: '#7c5f87', marginRight:'20px' }}
+                        style={{ backgroundColor: '#4d7c8a', marginRight:'20px' }}
                     >
                         Export to Excel
                     </Button>
@@ -98,7 +98,7 @@ const TruckCanvas = ({
 
                                 <Button
                                     type="submit"
-                                    style={{ marginTop: '15px', backgroundColor: '#7c5f87' }}
+                                    style={{ marginTop: '15px', backgroundColor: '#4d7c8a' }}
                                 >
                                     {editSection ? "Update Truck" : "Add Truck"}
                                 </Button>

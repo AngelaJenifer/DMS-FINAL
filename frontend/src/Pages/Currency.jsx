@@ -3,7 +3,6 @@ import { AgGridReact } from 'ag-grid-react';
 import "ag-grid-community/styles/ag-grid.css"; // Core CSS
 import "ag-grid-community/styles/ag-theme-quartz.css";
 import Nav from '../Components/UI/Nav';
-import DeleteIcon from '@mui/icons-material/Delete';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp'; // Import Thumbs Up Icon
 import EditIcon from '@mui/icons-material/Edit'; // Import Edit Icon
 import { Grid } from '@mui/material';

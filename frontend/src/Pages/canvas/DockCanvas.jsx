@@ -34,14 +34,14 @@ const DockCanvas = ({
                     <Button
                         variant="primary"
                         onClick={toggleShow}
-                        style={{ backgroundColor: '#7c5f87', marginLeft:'1100px' }} // Added margin to the right
+                        style={{ backgroundColor: '#4d7c8a', marginLeft:'1100px' }} // Added margin to the right
                     >
                         Add Dock
                     </Button>
                     <Button
                         variant="secondary"
                         onClick={exportToExcel}
-                        style={{ backgroundColor: '#7c5f87', marginRight:'20px' }}
+                        style={{ backgroundColor: '#4d7c8a', marginRight:'20px' }}
                     >
                         Export to Excel
                     </Button>
@@ -119,7 +119,7 @@ const DockCanvas = ({
 
                                 <Button
                                     type="submit"
-                                    style={{ marginTop: '15px', backgroundColor: '#7c5f87' }}
+                                    style={{ marginTop: '15px', backgroundColor: '#4d7c8a' }}
                                 >
                                     {editSection ? "Update Dock" : "Add Dock"}
                                 </Button>

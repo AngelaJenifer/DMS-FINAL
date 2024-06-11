@@ -1,3 +1,18 @@
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0px rgba(245, 238, 238, 0.964);
+  }
+  50% {
+    box-shadow: 0 0 10px rgba(245, 238, 238, 0.964);
+  }
+  100% {
+    box-shadow: 0 0 0px rgba(245, 238, 238, 0.964);
+  }
+}
+
+
+
+
 .header__top {
   padding: 10px 0px;
   background: #4d7c8a;
@@ -32,7 +47,9 @@
   font-size: 0.7rem;
 }
 
-.header_top_right a {
+
+
+/* .header_top_right a {
   text-decoration: none;
   color: white;
   font-size: 1.3rem;
@@ -40,7 +57,33 @@
 
 .header_top_right a:hover {
   color: rgb(178, 246, 141);
+  animation: shine 1s forwards;
+} */
+
+
+.loginbutton, .registerbutton, .needhelp {
+  position: relative;
+  overflow: hidden;
+  color: white;
+  font-size: 1.3rem;
+  text-decoration: none;
+  transition: color 0.3s;
 }
+
+.loginbutton:hover, .registerbutton:hover, .needhelp:hover {
+  animation: pulse 1s infinite;
+  color: black !important;
+  background: linear-gradient(to right, #74ebd5 0%, #9face6 100%);
+  /* Optional: change text color on hover */
+}
+
+.loginbutton i, .registerbutton i {
+  z-index: 2;
+  position: relative;
+}
+
+
+
 
 /* ============ header middle style =========== */
 
@@ -92,6 +135,8 @@
   border-radius: 5px;
   font-size: 0.8rem;
 }
+
+
 
 .call-icon{
   font-size: 140%;

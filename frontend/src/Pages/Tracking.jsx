@@ -129,7 +129,7 @@ const [rowData, setRowData] = useState([
                 <div>
                     <p>Booking No. :</p>
                     <input type="text" value={bookingNo} onChange={(e) => setBookingNo(e.target.value)} />
-                    <button type="button" className="btn btn-primary" style={{ backgroundColor: '#6d9ce8' }} onClick={handleSearch}>Search</button>
+                    <button type="button" className="btn btn-primary" style={{ backgroundColor: '#4d7c8a',marginLeft: "20px" }} onClick={handleSearch}>Search</button>
                 </div>
 
                

@@ -4,7 +4,6 @@ import "ag-grid-community/styles/ag-grid.css"; // Core CSS
 import "ag-grid-community/styles/ag-theme-quartz.css";
 import Nav from '../Components/UI/Nav';
 import EditIcon from '@mui/icons-material/Edit';
-import DeleteIcon from '@mui/icons-material/Delete';
 import { Grid } from '@mui/material';
 import CompanyCanvas from './canvas/CompanyCanvas';
 import axios from 'axios';

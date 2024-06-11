@@ -70,7 +70,7 @@ function Register() {
             <MDBCardBody className='p-5 shadow-5 text-center'>
 
             <div className='d-flex justify-content-center align-items-center '>
-         <div className='bg-white p-3 rounded w-50'>
+         <div className='bg-white p-3 w-75'>
          <h2>Sign-Up</h2>
          
          <form onSubmit={handleSubmit}>
@@ -107,8 +107,8 @@ function Register() {
                 </div>
                 <button 
                 type="submit" 
-                className='btn btn-success w-100 rounded-0'  
-                style={{background: '#7c5f87'}}
+                className='btn btn-success w-100'  
+                // style={{background: '#7c5f87'}}
                 disabled={isLoading}
                 >
                     {isLoading ? <ClipLoader size={20} color={"#ffffff"} /> : 'Signup'}
@@ -119,7 +119,7 @@ function Register() {
             
             <p style={{color: 'blue'}}>Already have a account</p>
             <Link to='/login' type="submit"
-            className='btn btn-default border w-100 rounded-0 text-decoration' style={{background: '#7c5f87'}}
+            className='btn btn-default border w-100' 
             >Login</Link>
     
             </div>

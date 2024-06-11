@@ -4,7 +4,8 @@ const SignupSchema = new mongoose.Schema(
     {
         userid : String,
         password: String,
-        cpassword : String
+        cpassword : String,
+    
     }
 )
 

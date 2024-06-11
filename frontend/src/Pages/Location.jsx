@@ -10,7 +10,6 @@ import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import ClearIcon from '@mui/icons-material/Clear';
 import PrintIcon from '@mui/icons-material/Print';
 import QRmodal from './utils/QRmodel';
-import DockCanvas from './canvas/DockCanvas';
 import { exportToExcel } from './utils/excelUtils'
 import LocationCanvas from './canvas/LocationCanvas';
 
